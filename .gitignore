@@ -1,0 +1,17 @@
+#------------------------------------
+# don't track buildable files or
+# latex temp output files
+
+*.out
+*.aux
+*.gz
+*.log
+
+#------------------------------------
+# do not track binary files
+
+*.pdf
+
+#------------------------------------
+# do not sublime workspace
+*.sublime-workspace
