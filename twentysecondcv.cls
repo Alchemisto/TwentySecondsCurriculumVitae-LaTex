@@ -178,6 +178,37 @@
 }
 
 %----------------------------------------------------------------------------------------
+%	 ADDITIONAL PAGE(S) SIDEBAR LAYOUT
+%----------------------------------------------------------------------------------------
+
+\newcommand{\makesidebar}{
+	\begin{tikzpicture}[remember picture,overlay]
+   		\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
+	\end{tikzpicture}
+
+	%------------------------------------------------
+
+	\begin{textblock}{6}(0.5, 0.2)
+			
+		%------------------------------------------------
+
+		{\Large\color{mainblue}\cvname}
+
+		\profilesection{Skills}{4cm}
+
+		\skillstext
+		\scriptsize
+		\begin{flushleft}
+		(*)[The skill scale is from 0 (Fundamental Awareness) to 6 (Expert).]
+		\end{flushleft}
+			
+		%------------------------------------------------
+			
+	\end{textblock}
+}
+
+
+%----------------------------------------------------------------------------------------
 %	 COLOURED SECTION TITLE BOX
 %----------------------------------------------------------------------------------------
 
