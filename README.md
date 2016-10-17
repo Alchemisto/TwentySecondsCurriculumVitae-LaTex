@@ -1,14 +1,51 @@
-Twenty Seconds Curriculum Vitae in LaTex
-========================================
+Modern Resume Approach
+=====================================
+
+This Curricula Vitae (a.k.a Résumé ) was modeled from the "Twenty Seconds Curriculum Vitae in LaTex" by Carmine Spagnuolo which was also later highly modified by Vel (vel@latextemplates.com) at Latex Templates.  I forked the git project from Mr. Spagnuolo and included the work from Vel.  Then my modifications are dropped in.  Personally, I see in a competitive enviroment how the 20 second resume is needed and required.  I hope to never be in a position that my job fight is in that competitive enviroment.  The expance of my expereince is where I hope to shine and need more than a single page to depist it.  However the 20 second approach is interested and the topics worth investigating even for myself, so I have left much of Mr. Spagnuolo comments below:
 
 # Curricula Vitae - Résumés
 A curriculum vitae, otherwise known as a CV or résumé, is a document used by individuals to communicate their work history, education and skill set. This is a style template for your curriculum written in LaTex. The main goal of this template is to provide a curriculum that is able to survive to the résumés screening of "twenty seconds".
 
-_The author assumes no responsibility for the topicality, correctness, completeness or quality of the information provided and for the obtained résumés._
+-----------------------------
 
-This is designed for computer scientists but there is no limitation to use it for résumés in other disciplines.
+# Build 
+This guide walks you to build your résumé.
 
-##The basic idea is KISS - Keep It Simple, Stupid.
+Build requirements:
+
+* LaTex installation.
+	* additionals packages:	 	
+		- ClearSans, fontenc
+		- tikz
+		- xcolor
+		- textpos
+		- ragged2e
+		- etoolbox
+		- ifmtarg
+		- ifthen
+		- pgffor
+		- marvosym
+		- parskip
+
+	As an alternative, I installed the following pacakge "texlive-full" package (very large, but includes a ton of LaTex packages) by typing:
+		sudo apt-get update
+		sudo apt-get -y install texlive-full
+
+###Build through GNU Make command
+Clean your project résumé.
+	
+	make clean
+	
+Build your project résumé.
+
+	make all
+	
+-- _Alternately you can build through your favorite LaTex editor._ --
+
+
+---------------------------------------------------
+# Original Notes
+The following are the comments regarding the original work and the 20 second approach...
 
 In a nutshell _**"It is vain to do with more what can be done with fewer"**_ -- Occam's razor --
 
@@ -34,40 +71,7 @@ Here's an examples:
 	
 -- _Cracking the Coding Interview, Book, Gayle Laakmann Mcdowell_ --
 
-##Toy Résumé
-***
-![sample résumé](https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex/raw/master/Twenty-Seconds_cv.jpg)
-***
 
-# Build 
-This guide walks you to build your résumé.
-
-Build requirements:
-
-* LaTex installation.
-	* additionals packages:	 	
-		- ClearSans, fontenc
-		- tikz
-		- xcolor
-		- textpos
-		- ragged2e
-		- etoolbox
-		- ifmtarg
-		- ifthen
-		- pgffor
-		- marvosym
-		- parskip
-
-###Build through GNU Make command
-Clean your project résumé.
-	
-	make clean
-	
-Build your project résumé.
-
-	make all
-	
--- _Alternately you can build through your favorite LaTex editor._ --
 
 #Environment style and list of commands
 
