@@ -123,7 +123,16 @@
 	%------------------------------------------------
 
 	\begin{textblock}{6}(0.5, 0.2)
-			
+		
+		%------------------------------------------------
+
+		{\Huge\color{mainblue}\cvname}
+
+		%------------------------------------------------
+
+		{\Large\color{black!80}\cvjobtitle}
+
+
 		%------------------------------------------------
 		
 		\begin{center}
@@ -132,14 +141,6 @@
 				\node[anchor=north west, inner sep=0pt, outer sep=0pt] at (0,0) {\includegraphics[width=\imagewidth]{\profilepic}};
 			\end{tikzpicture}
 		\end{center}
-
-		%------------------------------------------------
-
-		{\Huge\color{mainblue}\cvname}
-
-		%------------------------------------------------
-
-		{\Large\color{black!80}\cvjobtitle}
 
 		%------------------------------------------------
 
