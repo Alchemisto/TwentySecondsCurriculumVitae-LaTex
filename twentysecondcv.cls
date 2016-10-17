@@ -18,6 +18,7 @@
 \RequirePackage{pgffor}
 \RequirePackage{marvosym}
 \RequirePackage{parskip}
+\RequirePackage{fontawesome}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -31,6 +32,21 @@
 \definecolor{sidecolor}{HTML}{E7E7E7}
 \definecolor{mainblue}{HTML}{0E5484}
 \definecolor{maingray}{HTML}{B9B9B9}
+
+
+%----------------------------------------------------------------------------------------
+%	 FONT AWESOME FONT SIZING CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\DeclareFontFamily{U}{FontAwesomeOne}{}
+\DeclareFontShape{U}{FontAwesomeOne}{m}{n}{<-> FontAwesome--fontawesomeone}{}
+\DeclareRobustCommand\FAone{\fontencoding{U}\fontfamily{FontAwesomeOne}\fontseries{m}\fontshape{n}\selectfont}
+\DeclareFontFamily{U}{FontAwesomeTwo}{}
+\DeclareFontShape{U}{FontAwesomeTwo}{m}{n}{<-> FontAwesome--fontawesometwo}{}
+\DeclareRobustCommand\FAtwo{\fontencoding{U}\fontfamily{FontAwesomeTwo}\fontseries{m}\fontshape{n}\selectfont}
+\DeclareFontFamily{U}{FontAwesomeThree}{}
+\DeclareFontShape{U}{FontAwesomeThree}{m}{n}{<-> FontAwesome--fontawesomethree}{}
+\DeclareRobustCommand\FAthree{\fontencoding{U}\fontfamily{FontAwesomeThree}\fontseries{m}\fontshape{n}\selectfont}
+ 
 
 %----------------------------------------------------------------------------------------
 %	 MISC CONFIGURATIONS
@@ -62,6 +78,7 @@
 \newcommand{\cvnumberphone}[1]{\renewcommand{\cvnumberphone}{#1}}
 \newcommand{\cvaddress}[1]{\renewcommand{\cvaddress}{#1}}
 \newcommand{\cvsite}[1]{\renewcommand{\cvsite}{#1}}
+\newcommand{\gitsite}[1]{\renewcommand{\gitsite}{#1}}
 \newcommand{\aboutme}[1]{\renewcommand{\aboutme}{#1}}
 \newcommand{\profilepic}[1]{\renewcommand{\profilepic}{#1}}
 \newcommand{\cvname}[1]{\renewcommand{\cvname}{#1}}
@@ -106,7 +123,16 @@
 	%------------------------------------------------
 
 	\begin{textblock}{6}(0.5, 0.2)
-			
+		
+		%------------------------------------------------
+
+		{\Huge\color{mainblue}\cvname}
+
+		%------------------------------------------------
+
+		{\Large\color{black!80}\cvjobtitle}
+
+
 		%------------------------------------------------
 		
 		\begin{center}
@@ -118,20 +144,15 @@
 
 		%------------------------------------------------
 
-		{\Huge\color{mainblue}\cvname}
-
-		%------------------------------------------------
-
-		{\Large\color{black!80}\cvjobtitle}
-
-		%------------------------------------------------
-
 		\renewcommand{\arraystretch}{1.6}
 		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
 			\ifthenelse{\equal{\cvdate}{}}{}{\textsc{\Large\icon{\Info}} & \cvdate\\}
 			\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\Letter}} & \cvaddress\\}
 			\ifthenelse{\equal{\cvnumberphone}{}}{}{\textsc{\Large\icon{\Telefon}} & \cvnumberphone\\}
 			\ifthenelse{\equal{\cvsite}{}}{}{\textsc{\Large\icon{\Mundus}} & \cvsite\\}
+			\ifthenelse {\equal	{\gitsite} {} } %if gitsite is empty
+				{}  %true - then display nothing 
+				{\textsc {\Huge \faGithub} & \gitsite\\} % else show site
 			\ifthenelse{\equal{\cvmail}{}}{}{\textsc{\large\icon{@}} & \href{mailto:\cvmail}{\cvmail}}
 		\end{tabular}
 
@@ -156,6 +177,37 @@
 			
 	\end{textblock}
 }
+
+%----------------------------------------------------------------------------------------
+%	 ADDITIONAL PAGE(S) SIDEBAR LAYOUT
+%----------------------------------------------------------------------------------------
+
+\newcommand{\makesidebar}{
+	\begin{tikzpicture}[remember picture,overlay]
+   		\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
+	\end{tikzpicture}
+
+	%------------------------------------------------
+
+	\begin{textblock}{6}(0.5, 0.2)
+			
+		%------------------------------------------------
+
+		{\Large\color{mainblue}\cvname}
+
+		\profilesection{Skills}{4cm}
+
+		\skillstext
+		\scriptsize
+		\begin{flushleft}
+		(*)[The skill scale is from 0 (Fundamental Awareness) to 6 (Expert).]
+		\end{flushleft}
+			
+		%------------------------------------------------
+			
+	\end{textblock}
+}
+
 
 %----------------------------------------------------------------------------------------
 %	 COLOURED SECTION TITLE BOX
