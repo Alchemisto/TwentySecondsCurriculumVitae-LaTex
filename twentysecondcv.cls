@@ -78,7 +78,9 @@
 \newcommand{\cvnumberphone}[1]{\renewcommand{\cvnumberphone}{#1}}
 \newcommand{\cvaddress}[1]{\renewcommand{\cvaddress}{#1}}
 \newcommand{\cvsite}[1]{\renewcommand{\cvsite}{#1}}
-\newcommand{\gitsite}[1]{\renewcommand{\gitsite}{#1}}
+\newcommand{\cvGitHub}[1]{\renewcommand{\cvGitHub}{#1}}
+\newcommand{\cvBitBucket}[1]{\renewcommand{\cvBitBucket}{#1}}
+\newcommand{\cvLinkedin}[1]{\renewcommand{\cvLinkedin}{#1}}
 \newcommand{\aboutme}[1]{\renewcommand{\aboutme}{#1}}
 \newcommand{\profilepic}[1]{\renewcommand{\profilepic}{#1}}
 \newcommand{\cvname}[1]{\renewcommand{\cvname}{#1}}
@@ -86,6 +88,8 @@
 
 % Command for printing the contact information icons
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
+
+\newcommand*\iconA[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1.75pt,fill=mainblue,mainblue,text=white] (char) {#1};}}
 
 % Command for printing skill progress bars
 \newcommand\skills[1]{ 
@@ -147,13 +151,23 @@
 		\renewcommand{\arraystretch}{1.6}
 		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
 			\ifthenelse{\equal{\cvdate}{}}{}{\textsc{\Large\icon{\Info}} & \cvdate\\}
-			\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\Letter}} & \cvaddress\\}
-			\ifthenelse{\equal{\cvnumberphone}{}}{}{\textsc{\Large\icon{\Telefon}} & \cvnumberphone\\}
-			\ifthenelse{\equal{\cvsite}{}}{}{\textsc{\Large\icon{\Mundus}} & \cvsite\\}
-			\ifthenelse {\equal	{\gitsite} {} } %if gitsite is empty
+			%\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\faMapMarker}} & \cvaddress\\}
+			\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\faHome}} & \cvaddress\\}
+			\ifthenelse{\equal{\cvnumberphone}{}}{}{\textsc{\Large\icon{\faPhone}} & \cvnumberphone\\}
+			%\ifthenelse{\equal{\cvsite}{}}{}{\textsc{\Large\icon{\Mundus}} & \href{http://\cvsite}{\cvsite}\\}
+			\ifthenelse{\equal{\cvsite}{}}{}{\textsc{\large\icon{\faCloud}} & \href{http://\cvsite}{\cvsite}\\}
+			\ifthenelse {\equal	{\cvGitHub} {} } %if gitsite is empty
 				{}  %true - then display nothing 
-				{\textsc {\Huge \faGithub} & \gitsite\\} % else show site
-			\ifthenelse{\equal{\cvmail}{}}{}{\textsc{\large\icon{@}} & \href{mailto:\cvmail}{\cvmail}}
+				{\textsc {\Large\icon{\faGithub}} & \href{http://\cvGitHub}{\cvGitHub}\\} % else show site
+			\ifthenelse {\equal	{\cvBitBucket} {} } %if gitsite is empty
+				{}  %true - then display nothing 
+				{\textsc {\Large\icon{\faBitbucket}} & \href{http://\cvBitBucket}{\cvBitBucket}\\} % else show site
+			\ifthenelse{\equal{\cvLinkedin} {} }
+				{}
+				{\textsc {\Large\icon{\faLinkedin}} & \href{http://\cvLinkedin}{\cvLinkedin}\\} % else show site
+			\ifthenelse{\equal{\cvmail} {} }
+				{}
+				{\textsc{\large\iconA{\faEnvelope}} & \href{mailto:\cvmail}{\cvmail}}
 		\end{tabular}
 
 		%------------------------------------------------
