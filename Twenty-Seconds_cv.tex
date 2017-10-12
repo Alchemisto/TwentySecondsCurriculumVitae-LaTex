@@ -1,184 +1,187 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Twenty Seconds Resume/CV
-% LaTeX Template
-% Version 2.0 (17-OCT-16)
-% Version 1.0 (14/7/16)
-% 
-% The offical home for this 2nd Version Template is here:
-% https://github.com/talbot-j/TwentySecondsCurriculumVitae-LaTex 
-% Author: Joshua R. Talbot (talbot.j@gmail.com)
-% 
-% A previous version can be found here:
-% http://www.LaTeXTemplates.com
-% Author: Vel (vel@LaTeXTemplates.com)
-% 
-% The original work can be found here:
-% https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
-% Auhor: Carmine Spagnuolo (cspagnuolo@unisa.it)
-%
-% License:
-% The MIT License (see included LICENSE file)
-%
-%
-% Special thanks to Mr. Spagnuolo who certainly did the majority of the leg 
-% work to make this awesome piece of work come to life.
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[letterpaper]{twentysecondcv}
+%%\usepackage{xcolor}
+%%\usepackage
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
 
-\documentclass[letterpaper]{twentysecondcv} % a4paper for A4
 
-%----------------------------------------------------------------------------------------
-%	 PERSONAL INFORMATION
-%----------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%
+%%PROFILE SIDE BAR%%
+%%%%%%%%%%%%%%%%%
 
-% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
-% Note: the command must stay!  Otherwise an error will occur.
+%%%%%%%%%%%%%%%%
+%%PERSONAL INFO%%%
+%%%%%%%%%%%%%%%%
 
-\profilepic{alice.jpeg} % Profile picture
+\profilepic{omar.jpg} %path of profile pic
+\cvname{Omar Elshal} %your name
+%\cvjobtitle{MSc. Student}%your actual job position
+\cvdate{25 September 1992}%date of birth
+\cvaddress{Yo-Kyl\"{a} 5C 22, Turku, Finland}%address
+\cvnumberphone{+358 46 9483209}%telphone number
+\cvmail{oam.elshal@gmail.com}%e-mail
+%\cvsite{https://linkedin.com/in/oelshal}%personal site
+\cvGitHub{www.github.com/Alchemisto}
+\cvLinkedin{www.linkedin.com/in/oelshal}
 
-\cvname{Alice} % Your name
-\cvjobtitle{Adventurer} % Job title/career
-\cvdate{26 November 1865} % Date of birth
-\cvaddress{United Kingdom} % Short address/location, use \newline if more than 1 line is required
-\cvGitHub{www.github.com}
-\cvBitBucket{www.bitbucket.com}
-\cvLinkedin{www.linkedin.com}
-\cvnumberphone{+39 0325658974} % Phone number
-\cvsite{http://en.wikipedia.org} % Personal website
-\cvmail{alice@wonderland.com} % Email address
-
-%----------------------------------------------------------------------------------------
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	 ABOUT ME
-%----------------------------------------------------------------------------------------
+% I have been working in SW/Embedded SW development for more than 2 years inside and outside academic environments including exposure to both commercial SW architecture such as AUTOSAR and HW educational platforms like Arduino and Raspberry Pi while using a variety of programming languages, IDEs and toolchain.
+\aboutme{In the last three years, I have developed my career as a software engineer with solid hands-on experience in different phases of software development cycle, starting from specifying, designing up to integration and testing. \\
+I have been involved in many projects with exposure to SW platforms like AUTOSAR and educational HW platforms like Arduino and Raspberry Pi and currently Pursuing a highly qualified technical environment that could enrich my knowledge, utilize my background and experience by introducing challenges and cutting-edge technologies.\\}%About me section
 
-\aboutme{Alice is a sensible prepubescent girl from a wealthy English family who finds herself in a strange world ruled by imagination and fantasy. Alice feels comfortable with her identity and has a strong sense that her environment is comprised of clear, logical, and consistent rules and features. Alice's familiarity with the world has led one critic to describe her as a "disembodied intellect". Alice displays great curiosity and attempts to fit her diverse experiences into a clear understanding of the world.
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%Skill bar section, each skill must have a value between 0 an 6 (float)%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\skills{{{\LaTeX}/4.4}, {Python/3.0}, {Embedded SW debugging/3.5}, {Java/4.5}, {Embedded C\textbackslash C++/5.2}}
 
-%----------------------------------------------------------------------------------------
-%	 SKILLS
-%----------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%Skill text section, each skill must have a value between 0 an 6%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\skillstext{{Business Model development/4.0}, {Multi-cultural teamwork/4.5}, {\\C\#/3.5}, {MATLAB/3.0}, {CUDA/3.5}, {\\Microsoft tools/4.5}}
 
-% Skill bar section, each skill must have a value between 0 an 6 (float)
-\skills{{pursuer of rabbits/5.8},{good manners/4},{outgoing/4.3},{polite/4},{Java/0.01}}
 
-%------------------------------------------------
+\makeprofile
+%%%%%%%%%%%%%%%%%%%%
+%%END PROFILE SIDE BAR%%
+%%%%%%%%%%%%%%%%%%%%
 
-% Skill text section, each skill must have a value between 0 an 6
-%\skillstext{{lovely/4},{narcissistic/3}}
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%BODY%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%
+%%SIMPLE SECTION%%%%%%
+%%%%%%%%%%%%%%%%%%%%
 
-\makeprofile % Print the sidebar
+\section{Experience}
 
-%----------------------------------------------------------------------------------------
-%	 INTERESTS
-%----------------------------------------------------------------------------------------
+\begin{twenty}
+  \twentyitem
+    {\small{Feb-Jul} 2013}
+    {Research Intern - \textbf{Valeo} \textsc{R\&D Center} }
+    {\textcolor{teal}{Egypt}}
+    %Automotive Industry - VIAS team
+    {\small{\textcolor{MidnightBlue}{ Software Development Solutions}}\\
+    \small{Worked on Ethernet stack of the AUTOSAR architecture to receive vehicle's diagnostics data using Diagnostics and I/O stacks:
+    \footnotesize{
+    \begin{itemize}
+    \setlength\itemsep{0em}
+	\item Ethernet was used for the first time within Valeo's branch through this project, as automotive communication protocols like LIN and CAN have various limitations.
+    
+	\item I was a part of the team who configured and developed the Ethernet (TCP/IP), Diagnostics and I/O stacks following the automotive architecture standard "AUTOSAR".
 
-\section{interests}
-
-The heroine and the dreamer of Wonderland; Alice is the principal character.
-
-%----------------------------------------------------------------------------------------
-%	 EDUCATION
-%----------------------------------------------------------------------------------------
-
-\section{education}
-
-\begin{twenty} % Environment for a list with descriptions
-	\twentyitem{since 1865}{Ph.D. {\normalfont candidate in Computer Science}}{Wonderland}{\emph{A Quantified Theory of Social Cohesion.}}
-	\twentyitem{1863-1865}{M.Sc. magna cum laude}{Wonderland}{Majoring in Computer Science}
-	\twentyitem{1861-1863}{B.Sc. magna cum laude}{Wonderland}{Majoring in Computer Science}
-	\twentyitem{1856-1861}{High school}{Wonderland}{Specializing in mathematics and physics.}
-	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+	\item In addition to that, I implemented a C\# app for displaying the diagnostics data on an Evaluation board that simulates the vehicle, then made the hardware setup needed to imitate the whole process to complete the project.
+    \end{itemize}
+}}}
 \end{twenty}
 
-%----------------------------------------------------------------------------------------
-%	 PUBLICATIONS
-%----------------------------------------------------------------------------------------
+\section{Education}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%TWENTY LIST ITEMS%%%%%%%%%%%%%%
+%%    Four arguments: date; title; where; description %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{twenty}
+  \twentyitem
+    {2015-2017}
+    {Double Masters Degree {\normalfont - EIT* Digital Master Schools}}
+    {\textcolor{teal}{Belgium}}
+    {Embedded Systems with a minor in Entrepreneurship and Innovation}
+  \twentyitem
+    {\hspace{0.2cm} 2016-2017}
+    {\hspace{0.1cm} M.Sc. {\normalfont - University of Turku(UTU) / \r{A}bo Akademi University(\r{A}AU)}}
+    {\textcolor{teal}{Finland}}
+    {Specialization in Energy Efficient Computing}
+  \twentyitem
+    {\hspace{0.2cm} 2015-2016}
+    {\hspace{0.1cm} M.Sc. {\normalfont - Eindhoven University of Technology (TU/e)}}
+    {\textcolor{teal}{The Netherlands}}
+    {Majoring in Embedded Systems}
+  \twentyitem
+    {2009-2014}
+    {B.Sc. (Very Good) - German University in Cairo (GUC) }
+    {\textcolor{teal}{Egypt}}
+    {Majoring in Computer Science and Engineering. \\
+    \textcolor{NavyBlue} {\footnotesize Thesis: ``Diagnostics over IP for AUTOSAR'' (Excellent)  }}
+    %| Advisor: Prof. Ayman \textsc{Elnagar}
+    
+\end{twenty}
+
+\section{Awards and certificates}
+\begin{twentyshort}
+  \twentyitemshort
+    {2016}
+    {\small Summer School in \textcolor{black}{Business Modelling} and \textcolor{black}{Smart Energy Systems} organized by EIT Digital and Hector School of Business at Karlsruhe Institute of Technology.}
+  \twentyitemshort
+    {2015}
+    {\small Scholarship by \textcolor{black}{EIT Digital} Master School covering study and mobility activities.}
+  \twentyitemshort
+    {2013}
+    {\small Qualified to the final round in \textcolor{black}{Microsoft ATLC} bachelor's project competition.}
+  \twentyitemshort
+    {2009}
+    {\small 30\% scholarship by the \textcolor{black}{GUC} for the 5-year duration of my bachelor's degree study}
+
+\end{twentyshort}
+
+%the project aims to exploit Energy, Delay and Area Product for the AES encryption %algorithm using \textbf{OpenMP} API on a superscalar multi-core X86 architecture %simulated by Snipersim multi-core simulator
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%TWENTY LIST SHORTITEMS%%%%%%%%%%%%%%
 %%% Two arguments: date; title/description %%%%%%%%%%
-\section{publications}
-
-\begin{twentyshort} % Environment for a short list with no descriptions
-	\twentyitemshort{1865}{Chapter One, Down the Rabbit Hole.}
-	\twentyitemshort{1865}{Chapter Two, The Pool of Tears.}
-	\twentyitemshort{1865}{Chapter Three,  The Caucus Race and a Long Tale.}
-	\twentyitemshort{1865}{Chapter Four,  The Rabbit Sends a Little Bill.}
-	\twentyitemshort{1865}{Chapter Five,  Advice from a Caterpillar.}
-	%\twentyitemshort{<dates>}{<title/description>}
-\end{twentyshort}
-
-%----------------------------------------------------------------------------------------
-%	 AWARDS
-%----------------------------------------------------------------------------------------
-
-\section{awards}
-
-\begin{twentyshort} % Environment for a short list with no descriptions
-	\twentyitemshort{1987}{All-Time Best Fantasy Novel.}
-	\twentyitemshort{1998}{All-Time Best Fantasy Novel before 1990.}
-	%\twentyitemshort{<dates>}{<title/description>}
-\end{twentyshort}
-
-%----------------------------------------------------------------------------------------
-%	 EXPERIENCE
-%----------------------------------------------------------------------------------------
-
-\section{experience}
-
-\begin{twenty} % Environment for a list with descriptions
-	\twentyitem{1900}{Alice in Wonderland-The Circra (1900's) Silent Film.}{Film}{The first Alice on film was over a hundred years ago.}
-	\twentyitem{1933}{Alice in Wonderland 1933 version.}{Film}{This film stars Ethel griffies and Charlotte Henry. It was a box office flop when it was released.}
-	\twentyitem{1951}{Disney Film.}{Film}{Walt Disney brings Lewis Carroll's fantasy story to life in this well done animated classic. Even though many elements from the book were dropped, such as the duchess with the baby pig and mock turtle, this version is without a doubt the most famous Alice adaption made.}
-	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Academic Projects}
+\begin{twenty}
+  \twentyitem
+     {2017}
+    {JPEG Parallelization on Intel's Multi-core Xeon processor}
+    {\textcolor{Plum}{UTU}}
+    {\small{Implemented using \textbf{Cilk Plus} language, \textbf{Intel Vtune Amplifier} and \textbf{Valgrind} tools to utilize the 24-cores of a Xeon machine for processing a huge set of pictures.}}
+   \twentyitem
+    {2016}
+    {VLIW Parallelization of AES Encryption on Intel's SiliconHive}
+    {\textcolor{Plum}{TU/e}}
+    {\small{The main task includes exploiting an AES encryption C application on \textbf{Intel}'s SiliconHive processor architecture through HW optimization like increasing memory footprints, or code optimizations such as loop unrolling.}}
+   \twentyitem
+%     {2015}
+%     {GPU Parallelization for a mock Bitcoin mining Application}
+%     {\textcolor{Plum}{TU/e}}
+%     {\small{Implemented using \textbf{cuda} along with \textit{nvvp} profiler for further optimization aiming to mine as much coins as possible in less time exploiting GPU multi-core architecture.}}
+%    \twentyitem
+    {2015}
+    {Cattle monitoring WSN system based on ContikiOS}
+    {\textcolor{Plum}{TU/e}}
+    {\small{Using wireless sensor network operating system \textbf{Contiki} to develop a cattle monitoring system done through simulations using \textit{Cooja} and different mobility models to simulate the cattle movement while evaluating network performance.}}
 \end{twenty}
+\footnotesize{NOTE: detailed description and demos of a number of the projects are included at LinkedIn profile}
 
-%----------------------------------------------------------------------------------------
-%	 OTHER INFORMATION
-%----------------------------------------------------------------------------------------
+\section{Technical Skills}
+\begin{itemize}
+\setlength\itemsep{-0.29em}
+%Windows, Linux, OS X and various 
+\item Experience with multiple \textbf{linux} distributions and other indie/open-source operating systems of whether desktop, mobile or memory-constrained platforms like ContikiOS, TinyOS and Raspbian.
+\item Experience with business model development in multiple entrepreneurial events.
+%\item Knowledge of AUTOSAR architecture standard (Ethernet, CAN and Diagnostics stacks)?
+\item Using Agile software development methodology in multiple projects.
+\item Worked with windRiver compiler, winIDEA, EB Tresos, HW/SW debuggers like JTag on evaluation boards.
+\item Experience with \textbf{Eclipse}, \textbf{Microsoft Visual Studio}, \textbf{KDevelop} and multiple other IDEs
+\item Using Linux software development toolchain such as \textbf{gcc}, \textbf{make} and \textbf{gdb}.
+\item Worked with Arduino Mega2560, Raspberry Pi 1B, Altera board DE2-115 and Intel Galileo board
+\item Using git and SVN version control software for Agile development
+\end{itemize}
 
-\section{other information}
+\section{Interests}
+Embedded Platforms, Entrepreneurship, Open-Source, Reverse Code Engineering, Quantum Computing\\
+Artificial Intelligence, 
+%Green Energy, Smart Energy Systems\\
+Reading, Gaming, Travelling
 
-\subsection{Review}
+{\let\thefootnote\relax\footnotetext{* \href{http://www.masterschool.eitdigital.eu/programmes/es/}{EIT: European Institute of Innovation \& Technology Double Degree Program}}}
 
-Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
-
-%----------------------------------------------------------------------------------------
-%	 SECOND PAGE EXAMPLE
-%----------------------------------------------------------------------------------------
-
-\newpage % Start a new page
-
-%------------------------------------------------
-
-% Skill text section, each skill must have a value between 0 an 6
-\skillstext{{lovely/4},{narcissistic/3}}
-
-%----------------------------------------------------------------------------------------
-
-\makesidebar % Print the sidebar
-
-\section{other information}
-
-\subsection{Review}
-
-Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
-
-\section{other information}
-
-\subsection{Review}
-
-Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
-
-%----------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%
+%%%%%ENDBODY%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
 
 \end{document} 
